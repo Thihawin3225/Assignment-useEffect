@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Form from "./compoment/Form";
 
 const App = () => {
-  const [todo, setTodo] = useState([]);
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const fetchData = async () => {
-    const api = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const data = await api.json();
-    setTodo(data);
-  };
   return (
     <div>
-      {todo.map((todos) => (
-        <p key={todos.id}>{todos.title}</p>
-      ))}
+      <Form />
     </div>
   );
 };
